@@ -1,3 +1,27 @@
+function printMessage(msg){
+	let div = document.createElement('div');
+	div.innerHTML = msg;
+	document.getElementById('messages').appendChild(div);
+}
+
+function clearMessages(){
+	document.getElementById('messages').innerHTML = '';
+}
+
+let randomNumber = Math.floor(Math.random() * 3 + 1);
+
+let computerMove = 'nieznany ruch';
+
+if(randomNumber == 1){
+  computerMove = 'kamień';
+} else if(randomNumber == 2) {
+  computerMove = 'papier';
+} else if(randomNumber == 3) {
+  computerMove = 'nożyce';
+}
+
+printMessage('Mój ruch to: ' + computerMove);
+
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
 console.log('Gracz wpisał: ' + playerInput);
@@ -13,3 +37,34 @@ if(playerInput == '1'){
 }
 
 printMessage('Twój ruch to: ' + playerMove);
+
+if(playerInput == '1' || playerInput == '2' || playerInput == '3'){
+	if(playerMove == computerMove) {
+		printMessage('remis');
+	} else {
+		if(playerMove == 'papier'){
+			if(computerMove == 'nożyce'){
+				printMessage('przegrałeś');
+			} else {
+				printMessage('wygrałeś');
+			}
+		}
+		
+		if(playerMove == 'kamień'){
+			if(computerMove == 'papier'){
+				printMessage('przegrałeś');
+			} else {
+				printMessage('wygrałeś');
+			}
+		}
+		if(playerMove == 'nożyce'){
+			if(computerMove == 'kamień'){
+				printMessage('przegrałeś');
+			} else {
+				printMessage('wygrałeś');
+			}
+		}
+	}
+} else {
+	printMessage('nie wybrałeś właściwej liczby');
+}
