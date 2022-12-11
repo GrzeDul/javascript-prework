@@ -1,14 +1,14 @@
-function printMessage(msg) {
-  let div = document.createElement("div");
+const printMessage = function (msg) {
+  const div = document.createElement("div");
   div.innerHTML = msg;
   document.getElementById("messages").appendChild(div);
-}
+};
 
-function clearMessages() {
+const clearMessages = function () {
   document.getElementById("messages").innerHTML = "";
-}
+};
 
-function getMoveName(argMoveId) {
+const getMoveName = function (argMoveId) {
   if (argMoveId == 1) {
     return "kamień";
   } else if (argMoveId == 2) {
@@ -18,9 +18,9 @@ function getMoveName(argMoveId) {
   }
   printMessage("Nie znam ruchu o id " + argMoveId + ".");
   return "nieznany ruch";
-}
+};
 
-function displayResult(argComputerMove, argPlayerMove) {
+const displayResult = function (argComputerMove, argPlayerMove) {
   console.log("moves:", argComputerMove, argPlayerMove);
   if (argPlayerMove == "nieznany ruch") {
     return;
@@ -51,25 +51,25 @@ function displayResult(argComputerMove, argPlayerMove) {
       }
     }
   }
-}
+};
 
-function playGame(playerInput) {
+const playGame = function (playerInput) {
   clearMessages();
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-  let computerMove = getMoveName(randomNumber);
+  const computerMove = getMoveName(randomNumber);
 
   printMessage("Mój ruch to: " + computerMove);
 
   console.log("Gracz wpisał: " + playerInput);
 
-  let playerMove = getMoveName(playerInput);
+  const playerMove = getMoveName(playerInput);
 
   printMessage("Twój ruch to: " + playerMove);
 
   displayResult(computerMove, playerMove);
-}
+};
 
 document.getElementById("play-rock").addEventListener("click", function () {
   playGame(1);
