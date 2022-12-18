@@ -9,11 +9,11 @@ const clearMessages = function () {
 };
 
 const getMoveName = function (argMoveId) {
-  if (argMoveId == 1) {
+  if (argMoveId == "kamień") {
     return "kamień";
-  } else if (argMoveId == 2) {
+  } else if (argMoveId == "papier") {
     return "papier";
-  } else if (argMoveId == 3) {
+  } else if (argMoveId == "nożyce") {
     return "nożyce";
   }
   printMessage("Nie znam ruchu o id " + argMoveId + ".");
@@ -67,11 +67,11 @@ const playGame = function (playerInput) {
 };
 
 document.getElementById("play-rock").addEventListener("click", function () {
-  playGame(1);
+  playGame('kamień');
 });
 document.getElementById("play-paper").addEventListener("click", function () {
-  playGame(2);
+  playGame('papier);
 });
 document.getElementById("play-scissors").addEventListener("click", function () {
-  playGame(3);
+  playGame('nożyce');
 });
