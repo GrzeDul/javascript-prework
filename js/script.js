@@ -39,32 +39,28 @@ if(playerInput == '1'){
 printMessage('Twój ruch to: ' + playerMove);
 
 if(playerInput == '1' || playerInput == '2' || playerInput == '3'){
-	if(playerMove == computerMove) {
-		printMessage('remis');
-	} else {
-		if(playerMove == 'papier'){
-			if(computerMove == 'nożyce'){
-				printMessage('przegrałeś');
-			} else {
-				printMessage('wygrałeś');
-			}
-		}
-		
-		if(playerMove == 'kamień'){
-			if(computerMove == 'papier'){
-				printMessage('przegrałeś');
-			} else {
-				printMessage('wygrałeś');
-			}
-		}
-		if(playerMove == 'nożyce'){
-			if(computerMove == 'kamień'){
-				printMessage('przegrałeś');
-			} else {
-				printMessage('wygrałeś');
-			}
-		}
-	}
-} else {
 	printMessage('nie wybrałeś właściwej liczby');
 }
+else if(playerMove == computerMove) {
+		printMessage('remis');
+}
+else if(playerMove == 'papier' && computerMove == 'nożyce'){
+	printMessage('przegrałeś');
+} 
+else if(playerMove == 'papier' && computerMove == 'kamień'){
+	printMessage('wygrałeś');		
+}
+else if(playerMove == 'kamień' && computerMove == 'papier'){
+	printMessage('przegrałeś');
+} 
+else if(playerMove == 'kamień' && computerMove == 'nożyce'){
+	printMessage('wygrałeś');		
+}
+else if(playerMove == 'nożyce' && computerMove == 'kamień'){
+	printMessage('przegrałeś');
+} 
+else if(playerMove == 'nożyce' && computerMove == 'papier'){
+	printMessage('wygrałeś');		
+}
+
+
