@@ -27,29 +27,24 @@ const displayResult = function (argComputerMove, argPlayerMove) {
   }
   if (argPlayerMove == argComputerMove) {
     printMessage("remis");
-  } else {
-    if (argPlayerMove == "papier") {
-      if (argComputerMove == "nożyce") {
+  }
+  else if(argPlayerMove == "papier" && argComputerMove == "nożyce"){
         printMessage("przegrałeś");
-      } else {
+  }
+  else if(argPlayerMove == "papier" && argComputerMove == "kamień"){
         printMessage("wygrałeś");
-      }
-    }
-
-    if (argPlayerMove == "kamień") {
-      if (argComputerMove == "papier") {
+  }
+  else if(argPlayerMove == "kamień" && argComputerMove == "papier"){
         printMessage("przegrałeś");
-      } else {
+  }
+  else if(argPlayerMove == "kamień" && argComputerMove == "nożyce"){
         printMessage("wygrałeś");
-      }
-    }
-    if (argPlayerMove == "nożyce") {
-      if (argComputerMove == "kamień") {
+  }
+  else if(argPlayerMove == "nożyce" && argComputerMove == "kamień"){
         printMessage("przegrałeś");
-      } else {
+  }
+  else if(argPlayerMove == "nożyce" && argComputerMove == "papier"){
         printMessage("wygrałeś");
-      }
-    }
   }
 };
 
