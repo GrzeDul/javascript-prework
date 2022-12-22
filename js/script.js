@@ -38,29 +38,11 @@ if(playerInput == '1'){
 
 printMessage('Twój ruch to: ' + playerMove);
 
-if(playerInput == '1' || playerInput == '2' || playerInput == '3'){
-	printMessage('nie wybrałeś właściwej liczby');
-}
-else if(playerMove == computerMove) {
-		printMessage('remis');
-}
-else if(playerMove == 'papier' && computerMove == 'nożyce'){
+if(playerMove == computerMove) {
+	printMessage('remis');
+} else if((playerMove == 'papier' && computerMove == 'nożyce') || (playerMove == 'kamień' && computerMove == 'papier') || (playerMove == 'nożyce' && computerMove == 'kamień')){
 	printMessage('przegrałeś');
-} 
-else if(playerMove == 'papier' && computerMove == 'kamień'){
+} else if((playerMove == 'papier' && computerMove == 'kamień') || (playerMove == 'kamień' && computerMove == 'nożyce') || (playerMove == 'nożyce' && computerMove == 'papier')){
 	printMessage('wygrałeś');		
 }
-else if(playerMove == 'kamień' && computerMove == 'papier'){
-	printMessage('przegrałeś');
-} 
-else if(playerMove == 'kamień' && computerMove == 'nożyce'){
-	printMessage('wygrałeś');		
-}
-else if(playerMove == 'nożyce' && computerMove == 'kamień'){
-	printMessage('przegrałeś');
-} 
-else if(playerMove == 'nożyce' && computerMove == 'papier'){
-	printMessage('wygrałeś');		
-}
-
 
