@@ -67,11 +67,14 @@ const playGame = function (playerInput) {
 };
 
 document.getElementById("play-rock").addEventListener("click", function () {
-  playGame('kamień');
+  const rock = 'kamień';
+  playGame(rock);
 });
 document.getElementById("play-paper").addEventListener("click", function () {
-  playGame('papier);
+  const paper = 'papier';
+  playGame(paper);
 });
 document.getElementById("play-scissors").addEventListener("click", function () {
-  playGame('nożyce');
+  const scissors = 'nożyce';
+  playGame(scissors);
 });
