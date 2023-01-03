@@ -9,11 +9,11 @@ const clearMessages = function () {
 };
 
 const getMoveName = function (argMoveId) {
-  if (argMoveId == "kamień") {
+  if (argMoveId == 1) {
     return "kamień";
-  } else if (argMoveId == "papier") {
+  } else if (argMoveId == 2) {
     return "papier";
-  } else if (argMoveId == "nożyce") {
+  } else if (argMoveId == 3) {
     return "nożyce";
   }
   printMessage("Nie znam ruchu o id " + argMoveId + ".");
@@ -22,11 +22,11 @@ const getMoveName = function (argMoveId) {
 
 const displayResult = function (argComputerMove, argPlayerMove) {
   console.log("moves:", argComputerMove, argPlayerMove);
-  if(playerMove == computerMove) {
+  if(argPlayerMove == argComputerMove) {
 	  printMessage('remis');
-  } else if((playerMove == 'papier' && computerMove == 'nożyce') || (playerMove == 'kamień' && computerMove == 'papier') || (playerMove == 'nożyce' && computerMove == 'kamień')){
+  } else if((argPlayerMove == 'papier' && argComputerMove == 'nożyce') || (argPlayerMove == 'kamień' && argComputerMove == 'papier') || (argPlayerMove == 'nożyce' && argComputerMove == 'kamień')){
 	  printMessage('przegrałeś');
-  } else if((playerMove == 'papier' && computerMove == 'kamień') || (playerMove == 'kamień' && computerMove == 'nożyce') || (playerMove == 'nożyce' && computerMove == 'papier')){
+  } else if((argPlayerMove == 'papier' && argComputerMove == 'kamień') || (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') || (argPlayerMove == 'nożyce' && argComputerMove == 'papier')){
 	  printMessage('wygrałeś');		
 }
 };
@@ -50,14 +50,14 @@ const playGame = function (playerInput) {
 };
 
 document.getElementById("play-rock").addEventListener("click", function () {
-  const rock = 'kamień';
+  const rock = 1;
   playGame(rock);
 });
 document.getElementById("play-paper").addEventListener("click", function () {
-  const paper = 'papier';
+  const paper = 2;
   playGame(paper);
 });
 document.getElementById("play-scissors").addEventListener("click", function () {
-  const scissors = 'nożyce';
+  const scissors = 3;
   playGame(scissors);
 });
