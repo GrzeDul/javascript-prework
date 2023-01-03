@@ -22,30 +22,13 @@ const getMoveName = function (argMoveId) {
 
 const displayResult = function (argComputerMove, argPlayerMove) {
   console.log("moves:", argComputerMove, argPlayerMove);
-  if (argPlayerMove == "nieznany ruch") {
-    return;
-  }
-  if (argPlayerMove == argComputerMove) {
-    printMessage("remis");
-  }
-  else if(argPlayerMove == "papier" && argComputerMove == "nożyce"){
-        printMessage("przegrałeś");
-  }
-  else if(argPlayerMove == "papier" && argComputerMove == "kamień"){
-        printMessage("wygrałeś");
-  }
-  else if(argPlayerMove == "kamień" && argComputerMove == "papier"){
-        printMessage("przegrałeś");
-  }
-  else if(argPlayerMove == "kamień" && argComputerMove == "nożyce"){
-        printMessage("wygrałeś");
-  }
-  else if(argPlayerMove == "nożyce" && argComputerMove == "kamień"){
-        printMessage("przegrałeś");
-  }
-  else if(argPlayerMove == "nożyce" && argComputerMove == "papier"){
-        printMessage("wygrałeś");
-  }
+  if(playerMove == computerMove) {
+	  printMessage('remis');
+  } else if((playerMove == 'papier' && computerMove == 'nożyce') || (playerMove == 'kamień' && computerMove == 'papier') || (playerMove == 'nożyce' && computerMove == 'kamień')){
+	  printMessage('przegrałeś');
+  } else if((playerMove == 'papier' && computerMove == 'kamień') || (playerMove == 'kamień' && computerMove == 'nożyce') || (playerMove == 'nożyce' && computerMove == 'papier')){
+	  printMessage('wygrałeś');		
+}
 };
 
 const playGame = function (playerInput) {
